@@ -1,0 +1,17 @@
+{
+  "name": "Colviseg Tickets",
+  "short_name": "Colviseg",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#003366",
+  "description": "Gestión de tickets interna Colviseg Ltda.",
+  "icons": [
+    {
+      "src": "img/colviseg-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
