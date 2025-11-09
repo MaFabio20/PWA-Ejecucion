@@ -1,40 +1,39 @@
-const CACHE_NAME = 'colviseg-cache-v1';
-const ASSETS = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/app/script.js',
-  '/img/colviseg-logo.png',
-  '/manifest.json'
+const CACHE_NAME = "colviseg-tickets-v1";
+const FILES_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./css/styles.css",
+  "./app/script.js",
+  "./img/colviseg-logo.png"
 ];
 
-self.addEventListener('install', event => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
   );
+  console.log("✅ Service Worker instalado");
   self.skipWaiting();
 });
 
-self.addEventListener('activate', event => {
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    caches.keys().then((keyList) =>
+      Promise.all(
+        keyList.map((key) => {
+          if (key !== CACHE_NAME) {
+            console.log("🗑 Eliminando caché antigua:", key);
+            return caches.delete(key);
+          }
+        })
+      )
     )
   );
   self.clients.claim();
 });
 
-self.addEventListener('fetch', event => {
+// Intercepta las peticiones y responde desde caché si no hay conexión
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      return (
-        cached ||
-        fetch(event.request).then(response => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-          return response;
-        })
-      );
-    })
+    caches.match(event.request).then((response) => response || fetch(event.request))
   );
 });
