@@ -1,73 +1,21 @@
 {
   "name": "Colviseg Tickets",
-  "short_name": "Colviseg",
-  "description": "Gestión interna de tickets de soporte y mantenimiento en Colviseg Ltda.",
+  "short_name": "Tickets",
+  "start_url": "./index.html",
+  "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#004aad",
+  "description": "Gestión interna de tickets Colviseg Ltda.",
   "orientation": "portrait",
-  "display": "standalone",
-  "start_url": "./index.html?utm_source=pwa",
-  "scope": "./",
-  "lang": "es-CO",
-  "dir": "ltr",
-  "categories": ["productividad", "empresa", "gestión"],
-  "id": "colviseg.tickets.app",
   "icons": [
     {
-      "src": "./img/colviseg-logo-1024.png",
-      "sizes": "1024x1024",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./img/colviseg-logo-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./img/colviseg-logo-384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./img/colviseg-logo-256.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./img/colviseg-logo-192.png",
+      "src": "img/colviseg-logo.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./img/colviseg-logo-128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./img/colviseg-logo-96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./img/colviseg-logo-64.png",
-      "sizes": "64x64",
       "type": "image/png"
     },
     {
-      "src": "./img/colviseg-logo-32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "./img/favicon.png",
-      "sizes": "16x16",
+      "src": "img/colviseg-logo.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
