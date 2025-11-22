@@ -31,7 +31,7 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Intercepta las peticiones y responde desde caché si no hay conexión
+
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => response || fetch(event.request))
